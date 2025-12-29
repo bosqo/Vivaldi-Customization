@@ -1,0 +1,24 @@
+/*
+Overriding VivalArc settings
+*/
+/*
+:root{
+
+  --win-header:5px !important;
+  --linux-header:5px !important;
+}
+*/
+
+
+
+#tabs-tabbar-container .toolbar-tabbar-before > div > .button-toolbar > button, #tabs-tabbar-container .toolbar-tabbar-after > div > .button-toolbar > button, #tabs-tabbar-container .toolbar-tabbar-before > .button-toolbar > button, #tabs-tabbar-container .toolbar-tabbar-after > .button-toolbar > button {
+  scale: 0.8 !important; 
+}
+
+#browser.win:not(.tabs-top):not(.tabs-bottom).address-top .toolbar:has(.window-buttongroup.on-mainbar), #browser.linux:not(.tabs-top):not(.tabs-bottom).address-top .toolbar:has(.window-buttongroup.on-mainbar) {
+  backdrop-filter: blur(4px) !important;
+}
+
+#browser:not(.tabs-top):not(.tabs-bottom).color-behind-tabs-off.bookmark-bar-top .bookmark-bar, #browser:not(.tabs-top):not(.tabs-bottom).color-behind-tabs-off .bookmark-bar button {
+  backdrop-filter: blur(4px) !important;
+}
