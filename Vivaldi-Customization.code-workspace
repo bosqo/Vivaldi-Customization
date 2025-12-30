@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.pruneOnFetch": true,
+    "files.autoSave": "onFocusChange",
+    "explorer.compactFolders": false,
+    "scm.defaultViewMode": "tree"
+  },
+  "extensions": {
+    "recommendations": [
+      "eamodio.gitlens",
+      "mhutchie.git-graph"
+    ]
+  }
+}
