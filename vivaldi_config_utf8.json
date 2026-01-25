@@ -1,0 +1,683 @@
+﻿{
+    "actions":  [
+                    {
+                        "COMMAND_038a20cf-f582-43d9-b308-b4293d61edce":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_ADD_BOOKMARK":  "",
+                        "COMMAND_APPEND_SELECTION_TO_NOTE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_BREAKMODE_TOGGLE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_CREATE_EVENT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_GOTO_DATE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_REFRESH":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_SEARCH":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_AGENDA":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_DAY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_MONTH":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_MULTIWEEK":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_WEEK":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEWMODE_YEAR":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEW_NEXT_PERIOD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEW_PREVIOUS_PERIOD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEW_TODAY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEW_ZOOM_IN":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CALENDAR_VIEW_ZOOM_OUT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CHECK_FOR_UPDATES":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_COPY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_CUT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_PASTE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_PASTE_AS_NOTE":  "",
+                        "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT_OR_PASTE_AND_GO":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_REDO":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_SELECT_ALL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLIPBOARD_UNDO":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLONE_TAB":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLOSE_ALL_BUT_ACTIVE_TAB":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_CLOSE_TAB":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_CLOSE_WINDOW":  "",
+                        "COMMAND_COPY_SELECTION_TO_NOTE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_DEVELOPER_TOOLS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_DEVTOOLS_CONSOLE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_DEVTOOLS_INSPECTOR":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_DISBAND_TILE_GROUP":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FIND_IN_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FIND_NEXT_IN_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FIND_PREVIOUS_IN_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_ADDRESSFIELD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_MAINMENU":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_NEXT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_PANEL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_PREVIOUS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_SEARCHFIELD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FOCUS_TABBAR":  "",
+                        "COMMAND_FOCUS_WEBVIEW":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_FULLSCREEN":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_GO_TO_PARENT_DIRECTORY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_HIBERNATE_INACTIVE_WORKSPACES":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_HIBERNATE_OTHER_TABS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_COMPOSER_CHOOSE_ATTACHMENTS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_COMPOSER_DELETE_DRAFT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_COMPOSE_NEW_MESSAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_DELETE_PERMANENTLY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_ENABLE_SENDER_VIEW":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_ENABLE_THREADED_VIEW":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_FORWARD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_LABEL_FLAG":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_JUNK":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_NOT_JUNK":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_READ":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_READ_AND_GOTO_NEXT_UNREAD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_THREAD_READ":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_MARK_THREAD_UNREAD":  "",
+                        "COMMAND_MAIL_MARK_UNREAD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_QUEUE_MESSAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_REPLY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_REPLY_ALL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_REPLY_LIST":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_SEND_MESSAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_SHOW_MAIL_INFO":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIL_SHOW_QUICK_REPLY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_TOGGLE_ADDRESS_BAR":  "",
+                        "COMMAND_MAIN_TOGGLE_PANEL_TOGGLE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_TOGGLE_TAB_BAR":  "",
+                        "COMMAND_MAIN_TOGGLE_UI":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_ZOOM_DOUBLE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_ZOOM_HALF":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_ZOOM_IN":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_ZOOM_OUT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_MAIN_ZOOM_RESET":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_NEW_BACKGROUND_TAB":  "@{gestures=System.Object[]}",
+                        "COMMAND_NEW_BACKGROUND_TAB_LINK":  "@{gestures=System.Object[]}",
+                        "COMMAND_NEW_PRIVATE_WINDOW":  "",
+                        "COMMAND_NEW_TAB":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_NEW_TAB_LINK":  "@{gestures=System.Object[]}",
+                        "COMMAND_NEW_TAB_OUTSIDE_GROUP":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_NEW_WINDOW":  "",
+                        "COMMAND_OPEN_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_PAGE_BACK":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_PAGE_FAST_FORWARD":  "@{gestures=System.Object[]}",
+                        "COMMAND_PAGE_FORWARD":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_PAGE_MUTE_ALL":  "",
+                        "COMMAND_PAGE_MUTE_OTHER":  "",
+                        "COMMAND_PAGE_REFRESH":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_PAGE_RELOAD_NOCACHE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_PAGE_REWIND":  "@{gestures=System.Object[]}",
+                        "COMMAND_PAGE_TOGGLE_MUTE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_PIN_TAB":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_PRINT_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_READERVIEW_TOGGLE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_RENAME_TAB":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_RENAME_TAB_STACK":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SAVE_PAGE":  "",
+                        "COMMAND_SHOW_BOOKMARKS":  "",
+                        "COMMAND_SHOW_BOOKMARK_BAR":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_BOOKMARK_PANEL":  "",
+                        "COMMAND_SHOW_CLEAR_PRIVATE_DATA":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_DOWNLOADS_PANEL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_EXTENSIONS":  "",
+                        "COMMAND_SHOW_HELP":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_HISTORY":  "",
+                        "COMMAND_SHOW_HISTORY_PANEL":  "",
+                        "COMMAND_SHOW_HOMEPAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_KEYBOARDSHORTCUTS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_MAIL_PANEL":  "",
+                        "COMMAND_SHOW_NEXT_PANEL":  "",
+                        "COMMAND_SHOW_NOTES":  "",
+                        "COMMAND_SHOW_NOTES_PANEL":  "",
+                        "COMMAND_SHOW_PREVIOUS_PANEL":  "",
+                        "COMMAND_SHOW_QUICK_COMMANDS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_SETTINGS":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_TAB_BUTTON_POPOUT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_1":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_2":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_3":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_4":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_5":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_6":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WEB_PANEL_7":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SHOW_WORKSPACE_MENU":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SPATNAV_DOWN":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SPATNAV_LEFT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SPATNAV_RIGHT":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_SPATNAV_UP":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_STOP_PAGE":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_TAB_MOVE_BACKWARD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_MOVE_FORWARD":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_REOPEN_RECENTLY_CLOSED":  "@{gestures=System.Object[]; shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_CLOSE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_CREATE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_CREATE_BY_HOSTS":  "",
+                        "COMMAND_TAB_STACK_DISSOLVE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_RELOAD":  "",
+                        "COMMAND_TAB_STACK_TILE_GRID":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_TILE_HORIZONTAL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_STACK_TILE_VERTICAL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_1":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_2":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_3":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_4":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_5":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_6":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_7":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_8":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_9":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_BACK_HISTORY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_BACK_ORDER":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_BACK_SETTING":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_FORWARD_HISTORY":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_FORWARD_ORDER":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_FORWARD_SETTING":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_SWITCH_LAST":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_THUMBNAIL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_TRANSLATE_PAGE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TAB_VIEW_PAGE_SOURCE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TASK_MANAGER":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TOGGLE_FOOTER":  "",
+                        "COMMAND_TOGGLE_FORCE_DARK_MODE":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TOGGLE_IMAGES":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TOGGLE_MENU_POSITION":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_TOGGLE_MOUSE_GESTURES":  "",
+                        "COMMAND_TOGGLE_PANEL":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_CREATE_NEW":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_0":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_1":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_2":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_3":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_4":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_5":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_6":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_7":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_8":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_MOVE_TABS_TO_9":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_1":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_10":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_2":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_3":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_4":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_5":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_6":  "@{shortcuts=System.Object[]}",
+                        "COMMAND_WORKSPACE_SWITCH_7":  "",
+                        "COMMAND_WORKSPACE_SWITCH_8":  "",
+                        "COMMAND_WORKSPACE_SWITCH_9":  "@{shortcuts=System.Object[]}"
+                    }
+                ],
+    "address_bar":  {
+                        "autocomplete":  {
+                                             "enabled":  true,
+                                             "suffix_expansion":  "@{enabled=False}"
+                                         },
+                        "extensions":  {
+                                           "hidden_extensions":  "mdjildafknihdffpkfmmpnpoiajfjnjd aeblfdkhhhdcdjpifhhbdiojplfjncoa djohocjcheabcpjfaokeancojipglfbe kbmfpngjjgdllneeigpgjifpgocmfgmb neebplgakaahbhdphmkckjjcegoiijjo gabfmnliflodkdafenbcpjdlppllnemd bcjindcccaagfpapjjmafapmmgkkhgoa bgnkhhnnamicmpeenaelnjfhikgbkllg lpcaedmchfhocbbapmcbpinfpgnhiddi oldceeleldhonbafppcapldpdifcinji ghbmnnjooekpmoecnnnilnnbdlolhkhi gkcoljnpncflkbpfdclfnilimianfech jinjaccalgkegednnccohejagnlnfdag ldgfbffkinooeloadekpmfoklnobpien blljobffcekcbopmkgfhpcjmbfnelkfg",
+                                           "render_in_dropdown":  false,
+                                           "show_all_toggle":  false
+                                       },
+                        "inline_search":  {
+                                              "suggest_on_nickname":  false
+                                          },
+                        "omnibox":  {
+                                        "bookmarks":  false,
+                                        "bookmarks_boosted":  false,
+                                        "cutcopy_encoded":  true,
+                                        "enabled":  true,
+                                        "search_history_enable":  true,
+                                        "show_browser_history":  true,
+                                        "show_nicknames":  true,
+                                        "show_search_history":  true,
+                                        "show_typed_history_button":  true
+                                    },
+                        "position":  0,
+                        "search":  {
+                                       "always_show_dropdown_badge":  false,
+                                       "direct_match_enabled":  true,
+                                       "display":  0,
+                                       "field_width":  383,
+                                       "in_new_tab":  true,
+                                       "keep_typed_text":  false
+                                   },
+                        "select_on_click":  true,
+                        "show_full_url":  false,
+                        "show_progress":  true,
+                        "show_qr_generator":  false,
+                        "show_search_suggestions_warning":  977,
+                        "url_open_shortcut":  1,
+                        "visible":  false
+                    },
+    "appearance":  {
+                       "css_ui_mods_directory":  "C:\\Users\\Felix\\AppData\\Local\\Vivaldi\\User Data\\css",
+                       "density":  true,
+                       "disable_title_bar":  false,
+                       "force_dark_mode_theme":  false
+                   },
+    "bookmarks":  {
+                      "bar":  {
+                                  "position":  0,
+                                  "sorting":  "@{sortField=manually; sortOrder=1}",
+                                  "visible":  true
+                              },
+                      "deleted_partners":  [
+
+                                           ],
+                      "language":  "de-DE",
+                      "manager":  {
+                                      "sorting":  "@{sortField=manually; sortOrder=1}"
+                                  },
+                      "open_in_new_tab":  false,
+                      "panel":  {
+                                    "editor_height":  230,
+                                    "sorting":  "@{sortField=manually; sortOrder=1}"
+                                },
+                      "save_folder":  "415",
+                      "version":  "37"
+                  },
+    "calendar":  {
+                     "onboarding_shown":  true,
+                     "templates_version":  1
+                 },
+    "chained_commands":  {
+                             "command_list":  [
+                                                  "@{category=CATEGORY_COMMAND_CHAIN; chain=System.Object[]; key=ckqjhvf430003c5429ni7i7bz; label=Andere Tabs schlieÃŸen und definierten Ã¶ffnen; name=COMMAND_ckqjhvf430003c5429ni7i7bz}",
+                                                  "@{category=CATEGORY_COMMAND_CHAIN; chain=System.Object[]; key=ckqkoqycf0003wv4210uduu8n; label=New PowerPlatform Workspace; name=COMMAND_ckqkoqycf0003wv4210uduu8n}",
+                                                  "@{category=CATEGORY_COMMAND_CHAIN; chain=System.Object[]; key=ckqjdk4o7000001l58zh17egm; label=Links Ã¶ffnen und kacheln; name=COMMAND_ckqjdk4o7000001l58zh17egm}",
+                                                  "@{category=CATEGORY_COMMAND_CHAIN; chain=System.Object[]; key=038a20cf-f582-43d9-b308-b4293d61edce; label=Gemini Tile to the right; name=COMMAND_038a20cf-f582-43d9-b308-b4293d61edce}",
+                                                  "@{category=CATEGORY_COMMAND_CHAIN; chain=System.Object[]; key=84d94a1b-3889-4ecd-9d34-c366015f54e6; label=test tile; name=COMMAND_84d94a1b-3889-4ecd-9d34-c366015f54e6}"
+                                              ],
+                             "deleted_command_list":  [
+                                                          "a7b17449-c8ae-4925-89e4-d09a2ac8d535"
+                                                      ],
+                             "version":  1
+                         },
+    "context_dialogs":  {
+                            "seen":  {
+                                         "EnableCalendarContextDialog":  false,
+                                         "EnableMailContextDialog":  false,
+                                         "EnableSyncContextDialog":  false
+                                     }
+                        },
+    "dashboard":  {
+                      "columns":  4,
+                      "widgets":  [
+                                      "@{background=semi-transparent; groupPath=Lesezeichen/Startseite; id=60774ea8-8e91-4735-9add-a532abc45945; locationId=2950159; position=; precipitationUnit=mm; size=regular; speeddialGroupUUID=-99; temperatureUnit=celsius; type=weather; view=WEEK; windspeedUnit=ms}",
+                                      "@{background=semi-transparent; groupPath=Lesezeichen/Startseite; id=7a805b6d-bdf7-4137-aa1e-853f84b33c10; period=30; position=; size=regular; speeddialGroupUUID=-99; type=privacy-stats}"
+                                  ]
+                  },
+    "downloads":  {
+                      "start_automatically":  false
+                  },
+    "features":  {
+                     "calendar":  false,
+                     "feeds":  false,
+                     "mail":  false
+                 },
+    "geolocation":  {
+                        "list":  [
+                                     "@{lat=52.520007; locale=de; location_id=b7d85431-8501-488a-adaa-7431f3fdea0a; long=13.404954; name=Berlin; timezone=Europe/Berlin}",
+                                     "@{lat=35.689487; locale=ja; location_id=f8282ae9-e6f3-45b8-a5d2-7858de890f32; long=139.691706; name=Tokyo; timezone=Asia/Tokyo}",
+                                     "@{lat=37.774929; locale=en-US; location_id=a94f1743-e3da-4f7b-96c4-8538a736a83b; long=-122.419416; name=San Francisco; timezone=America/Los_Angeles}"
+                                 ]
+                    },
+    "homepage":  "vivaldi://startpage",
+    "homepage_cache":  "https://gemini.google.com/app?hl=de",
+    "keyboard":  {
+                     "shortcuts":  {
+                                       "alt_opens_menu":  false,
+                                       "browser_priority_list":  "ctrl+t ctrl+w ctrl+n ctrl+shift+t ctrl+shift+n ctrl+shift+w ctrl+space ctrl+shift+space ctrl+shift+s",
+                                       "enable_single_key":  false,
+                                       "enable_single_key_for_mail":  false
+                                   }
+                 },
+    "language_at_install":  "de",
+    "list":  {
+                 "selections":  {
+                                    "BOOKMARKS_MANAGER":  "@{anchorId=10593; leadId=10593; selectedIds=System.Object[]}",
+                                    "BOOKMARKS_PANEL":  "@{anchorId=400; leadId=400; selectedIds=System.Object[]}",
+                                    "CONTACT_TREE":  "@{anchorId=1; leadId=1; selectedIds=System.Object[]}",
+                                    "DOWNLOADS_TREE":  "@{anchorId=71; leadId=71; selectedIds=System.Object[]}",
+                                    "HISTORY_PANEL":  "@{anchorId=2025-11-23; leadId=2025-11-23; selectedIds=System.Object[]}",
+                                    "MAIL_PANEL":  "@{anchorId=ALL_MESSAGES; leadId=ALL_MESSAGES; selectedIds=System.Object[]}",
+                                    "MAIL_SEARCH_All MessagesReceived":  "@{anchorId=59327; leadId=59327; selectedIds=System.Object[]}",
+                                    "MAIL_SEARCH_All MessagesSpam":  "@{anchorId=59327; leadId=59327; selectedIds=System.Object[]}",
+                                    "MAIL_SEARCH_All MessagesUnread":  "@{anchorId=59327; leadId=59327; selectedIds=System.Object[]}",
+                                    "MAIL_SEARCH_All MessagesVIVALDI_RESERVED_DUMMY_ROOT_PLACEHOLDER_PATH":  "@{anchorId=73; leadId=73; selectedIds=System.Object[]}",
+                                    "NOTES_MANAGER_TREE_1723422120":  "@{anchorId=5; leadId=5; selectedIds=System.Object[]}",
+                                    "NOTES_MANAGER_TREE_1723423271":  "@{anchorId=8; leadId=8; selectedIds=System.Object[]}",
+                                    "NOTES_TREE":  "@{anchorId=8; leadId=8; selectedIds=System.Object[]}",
+                                    "SETTINGS_TREE":  "@{anchorId=11; leadId=11; selectedIds=System.Object[]}",
+                                    "TAB_BUTTON_POPUP_OPEN":  "@{anchorId=1723539832; leadId=1723539832; selectedIds=System.Object[]}",
+                                    "WINDOWS_PANEL":  "@{anchorId=window-1723534773; leadId=window-1723534773; selectedIds=System.Object[]}"
+                                }
+             },
+    "mail":  {
+                 "accounts":  [
+                                  "@{MAIL_EMAIL=felix@ruesche.dev; MAIL_NAME=Felix RÃ¼sche; MAIL_PORT=993; MAIL_SERVER=imap.mailbox.org; MAIL_SMTP_PORT=465; MAIL_SMTP_SERVER=smtp.mailbox.org; MAIL_SMTP_SOCKET_TYPE=ssl; MAIL_SMTP_USER=felix@ruesche.dev; MAIL_USER=felix@ruesche.dev; accountType=IMAP; isProtonAccount=False; preFetch=month}",
+                                  "@{MAIL_EMAIL=felix@ruesche-berlin.de; MAIL_NAME=Felix RÃ¼sche; MAIL_PORT=993; MAIL_SERVER=imap.1und1.de; MAIL_SMTP_PORT=465; MAIL_SMTP_SERVER=smtp.1und1.de; MAIL_SMTP_SOCKET_TYPE=ssl; MAIL_SMTP_USER=felix@ruesche-berlin.de; MAIL_USER=felix@ruesche-berlin.de; accountType=IMAP; isProtonAccount=False; preFetch=month}"
+                              ],
+                 "mailto_in_vivaldi":  true
+             },
+    "menu":  {
+                 "compact":  false,
+                 "display":  0,
+                 "icon_type":  0
+             },
+    "mouse_gestures":  {
+                           "alt_gestures_enabled":  false,
+                           "enabled":  false
+                       },
+    "mouse_wheel":  {
+                        "tab_switch":  false
+                    },
+    "notes":  {
+                  "creation":  {
+                                   "notify":  false,
+                                   "show_panel":  false
+                               },
+                  "manager":  {
+                                  "layout":  1
+                              }
+              },
+    "oauth":  {
+                  "refresh_tokens":  {
+                                         "bosqo030@gmail.com":  "@{provider=google; refreshToken=djEw0yVCPUAW0u+h9OMX4nezXFNyIcR3wci1/SZcdgH3u8T/QF8jP+MMIdWz7E8RYSR+TBkPpCMAX+mVRmfWiEtjJJe52vJB04fWRzMIJ28oxPEbcgSjtkQHIS5jGfbNXDqQjHAfliMQRQk1UxwgB9PMMl+Crzg9X+Vu/tPiTDTuDLEcUhM=}"
+                                     }
+              },
+    "panels":  {
+                   "as_overlay":  {
+                                      "auto_close":  false,
+                                      "enabled":  true
+                                  },
+                   "elements":  [
+                                    "@{id=PanelBookmarks; resizable=False; width=362}",
+                                    "@{id=PanelReadingList; resizable=False; width=-1}",
+                                    "@{id=PanelDownloads; resizable=False; width=623}",
+                                    "@{id=PanelHistory; resizable=False; width=-1}",
+                                    "@{id=PanelNotes; resizable=False; width=-1}",
+                                    "@{id=PanelWindow; resizable=True; width=-1}",
+                                    "@{id=PanelTranslate; resizable=False; width=-1}",
+                                    "@{id=PanelMail; resizable=False; width=-1}",
+                                    "@{id=PanelCalendar; resizable=False; width=-1}",
+                                    "@{id=PanelTasks; resizable=False; width=-1}",
+                                    "@{id=PanelFeeds; resizable=False; width=-1}",
+                                    "@{id=PanelContacts; resizable=False; width=-1}",
+                                    "@{id=PanelSession; resizable=False; width=-1}"
+                                ],
+                   "lazy_load":  true,
+                   "position":  1,
+                   "show_close_button":  true,
+                   "show_toggle":  false,
+                   "translate":  {
+                                     "paste":  true,
+                                     "redirect":  false
+                                 },
+                   "web":  {
+                               "elements":  "      ",
+                               "removed_elements":  "                       "
+                           },
+                   "window":  {
+                                  "drag_to_stack":  true,
+                                  "inactive_tabs_days":  4
+                              },
+                   "window_defaults":  {
+                                           "barVisible":  true,
+                                           "contentVisible":  true,
+                                           "selectedPanel":  "PanelDownloads",
+                                           "width":  623
+                                       }
+               },
+    "pip_placement":  {
+                          "height":  969,
+                          "left":  -2234,
+                          "top":  98,
+                          "width":  1587
+                      },
+    "popups":  {
+                   "show_in_tab":  true
+               },
+    "privacy":  {
+                    "adverse_ad_block":  {
+                                             "last_update":  "2025-11-23T00:58:32.869Z"
+                                         },
+                    "google_component_extensions":  {
+                                                        "hangout_services":  true
+                                                    }
+                },
+    "quick_commands":  {
+                           "first_run_tip_dismissed":  true,
+                           "limit_results":  true,
+                           "match_nickname":  true,
+                           "open_url_in_new_tab":  false,
+                           "use_notes_manager":  false
+                       },
+    "sessions":  {
+                     "save_version":  1
+                 },
+    "settings":  {
+                     "mono_icons":  false,
+                     "size":  {
+                                  "height":  1217,
+                                  "left":  1579,
+                                  "top":  0,
+                                  "width":  654
+                              }
+                 },
+    "show_extensions_banner":  false,
+    "startpage":  {
+                      "navigation":  1,
+                      "navigation_shorcuts":  false,
+                      "speed_dial":  {
+                                         "add_button_visible":  true,
+                                         "controls_visible":  false,
+                                         "delete_visible":  false,
+                                         "game_button_show":  false,
+                                         "group_settings":  "@{17850=}",
+                                         "restore_page_id":  "17850",
+                                         "size":  0,
+                                         "titles_visible":  0
+                                     }
+                  },
+    "startup":  {
+                    "active_days":  [
+                                        1765630589372,
+                                        1765667625962,
+                                        1765753644141,
+                                        1765840017303,
+                                        1765926273605,
+                                        1766056078024,
+                                        1766250960673,
+                                        1766310403135,
+                                        1766496669438,
+                                        1766533744745,
+                                        1766656185848,
+                                        1766705980234,
+                                        1766791425042
+                                    ],
+                    "crash_detection_last_seen_version":  "7.7.3851.66",
+                    "first_seen_version":  "7.7.3851.52",
+                    "has_seen_feature":  1,
+                    "has_seen_welcome_page":  true,
+                    "last_seen_search_engine_prompt_time":  1766512024.351245,
+                    "last_seen_search_engine_prompt_version":  6,
+                    "last_seen_version":  "7.7.3851.66"
+                },
+    "status_bar":  {
+                       "display":  0,
+                       "minimized":  0
+                   },
+    "sync":  {
+                 "session_name":  "Desktop"
+             },
+    "system":  {
+                   "desktop_theme_color":  1,
+                   "search_engine":  {
+                                         "default":  "@{index=5; last_change=10000175}"
+                                     },
+                   "show_exit_confirmation_dialog":  false
+               },
+    "tabs":  {
+                 "activation":  {
+                                    "on_close":  2,
+                                    "prefer_related":  false
+                                },
+                 "active_min_size":  60,
+                 "always_load_pinned_after_restore":  false,
+                 "at_edge":  true,
+                 "bar":  {
+                             "height":  150,
+                             "position":  1,
+                             "slider_xpos":  150,
+                             "width":  193
+                         },
+                 "button":  {
+                                "dismissed_suggestions":  "tileTabs workspaceRules tabFeatures",
+                                "last_suggestion_time":  1765272064557
+                            },
+                 "close_button_left":  false,
+                 "close_button_permanent":  false,
+                 "close_pinned":  1,
+                 "confirm_closing_tabs":  false,
+                 "confirm_closing_threshold":  5,
+                 "counter_detection":  false,
+                 "dim_hibernated":  true,
+                 "double_click":  1,
+                 "focus_webview":  false,
+                 "horizontal_scrolling":  true,
+                 "minimize":  false,
+                 "new_page":  {
+                                  "custom_url":  "https://gemini.google.com/app?hl=de",
+                                  "link":  1
+                              },
+                 "new_placement":  1,
+                 "open_new_in_background":  true,
+                 "show_close_button":  true,
+                 "show_separator":  true,
+                 "stacking":  {
+                                  "allow_dnd":  true,
+                                  "auto_expand":  true,
+                                  "dnd_delay":  50,
+                                  "mode":  3,
+                                  "open_accordions":  "fade7b23-9cb9-4cd5-90ec-63343c1a5823 3bb194b6-f622-4a5f-b810-90e51e5fb96d",
+                                  "open_in_current":  false,
+                                  "prefer_dotted":  false,
+                                  "substrip_locked":  false
+                              },
+                 "thumbnails":  false,
+                 "unread":  true,
+                 "visible":  true,
+                 "visual_switch":  {
+                                       "enable":  true,
+                                       "list_layout":  true
+                                   }
+             },
+    "theme":  {
+                  "dim_blurred":  false,
+                  "schedule":  {
+                                   "o_s":  "@{dark=eff52447-c9b9-4370-bcef-151a1d92fb57; light=Vivaldi1}"
+                               },
+                  "simple_scrollbar":  true
+              },
+    "themes":  {
+                   "current_buttons":  "2e17289c-172a-467c-81f6-50941c77a037",
+                   "user":  [
+
+                            ]
+               },
+    "toolbars":  {
+                     "navigation":  [
+                                        "Home",
+                                        "Divider",
+                                        "Back",
+                                        "Forward",
+                                        "Reload",
+                                        "AddressField",
+                                        "Divider",
+                                        "Extensions",
+                                        "VPNButton",
+                                        "AccountButton"
+                                    ],
+                     "panel":  [
+                                   "AccountButton",
+                                   "PanelDownloads",
+                                   "Divider",
+                                   "Extensions",
+                                   "Divider",
+                                   "EXT_PANEL_ldgfbffkinooeloadekpmfoklnobpien",
+                                   "WEBPANEL_9e284800-ba4b-4688-b2ec-94a3e0651717",
+                                   "WEBPANEL_36e48f1d-6ed6-49e9-a14a-cc6c5443f753",
+                                   "WEBPANEL_6f3b66a3-908f-4882-af7a-f9692a0d7532",
+                                   "WEBPANEL_946a3f69-450f-408e-9ddc-6f3e5a8974d2",
+                                   "WEBPANEL_d70dad53-57e3-4810-bbc8-95a51aa62db5",
+                                   "WEBPANEL_6aea4c5f-e461-4e8f-8b2b-be6752386657",
+                                   "Divider",
+                                   "PanelWeb",
+                                   "FlexibleSpacer",
+                                   "UpdateButton"
+                               ],
+                     "status":  [
+                                    "FlexibleSpacer",
+                                    "COMMAND_038a20cf-f582-43d9-b308-b4293d61edce",
+                                    "TilingToggle",
+                                    "Zoom",
+                                    "PageActions",
+                                    "FlexibleSpacer"
+                                ],
+                     "tabbar_after":  [
+
+                                      ],
+                     "tabbar_before":  [
+                                           "Back",
+                                           "Forward",
+                                           "Home",
+                                           "WorkspaceButton",
+                                           "TabButton"
+                                       ]
+                 },
+    "translate":  {
+                      "enabled":  true,
+                      "target_language":  "en"
+                  },
+    "vivaldi_account":  {
+                            "device_id":  "8072d531-9ff6-4d97-bbc4-49aef6fd76c9",
+                            "id":  "bosqo",
+                            "refresh_token":  "djEwouL3nwsiMrtsDwQm5d1tetJR+/cI5fc58DEyxUPtV93srQD/Ogsb3SCf99Aura9bSehuBPis/84QHBNYlZxK9A==",
+                            "username":  "bosqo"
+                        },
+    "webpages":  {
+                     "capture":  {
+                                     "capture_mode":  1,
+                                     "save_location":  1
+                                 },
+                     "translate_selection_button":  {
+                                                        "enabled":  false
+                                                    }
+                 },
+    "welcome":  {
+                    "read_pages":  [
+                                       "intro",
+                                       "account",
+                                       "import_data",
+                                       "tracker_and_ad",
+                                       "personalize",
+                                       "tabs",
+                                       "mail_setup"
+                                   ]
+                },
+    "windows":  {
+                    "show_window_close_confirmation_dialog":  true,
+                    "use_native_decoration":  false
+                },
+    "workspaces":  {
+                       "button":  {
+                                      "mouse_wheel_enabled":  false
+                                  },
+                       "link_routes":  [
+
+                                       ],
+                       "list":  [
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M4.5 6.5V8.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M3.5 7.5H5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M15.475 12.28L14.5 6.00002C14.5006 5.38004 14.2709 4.78195 13.8553 4.32185C13.4398 3.86175 12.8681 3.57247 12.2513 3.51016C11.6344 3.44785 11.0164 3.61697 10.5173 3.98467C10.0181 4.35238 9.67339 4.89244 9.55002 5.50002H6.45002C6.32664 4.89244 5.98192 4.35238 5.48275 3.98467C4.98359 3.61697 4.3656 3.44785 3.74877 3.51016C3.13193 3.57247 2.56025 3.86175 2.1447 4.32185C1.72916 4.78195 1.49939 5.38004 1.50002 6.00002L0.525016 12.28C0.482593 12.4695 0.496246 12.6672 0.56431 12.8491C0.632373 13.0309 0.751903 13.189 0.908308 13.304C1.06471 13.4191 1.25123 13.4861 1.44509 13.497C1.63895 13.5078 1.83177 13.4619 2.00002 13.365L6.50002 10.5H9.50002L14 13.365C14.1683 13.4619 14.3611 13.5078 14.5549 13.497C14.7488 13.4861 14.9353 13.4191 15.0917 13.304C15.2481 13.189 15.3677 13.0309 15.4357 12.8491C15.5038 12.6672 15.5174 12.4695 15.475 12.28Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cline x1=\"11.5\" y1=\"6\" x2=\"11.5\" y2=\"7\"/\u003e\n  \u003cline x1=\"10.5\" y1=\"8\" x2=\"10.5\" y2=\"9\"/\u003e\n  \u003cline x1=\"12.5\" y1=\"8\" x2=\"12.5\" y2=\"9\"/\u003e\n\u003c/svg\u003e\n; id=1765674733663; name=PoE2}",
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M3.5 8.5V11.9648C3.5 12.2992 3.66819 12.6099 3.97304 12.7472C4.63034 13.0433 5.97266 13.5 8 13.5C10.0273 13.5 11.3697 13.0433 12.027 12.7472C12.3318 12.6099 12.5 12.2992 12.5 11.9648V8.5M14.4182 5.54402L8.0237 8.98724C8.00891 8.9952 7.99109 8.9952 7.9763 8.98724L1.58176 5.54402C1.5467 5.52515 1.5467 5.47485 1.58176 5.45598L7.9763 2.01276C7.99109 2.0048 8.00891 2.0048 8.0237 2.01276L14.4182 5.45598C14.4533 5.47485 14.4533 5.52515 14.4182 5.54402Z\" stroke-linecap=\"round\"/\u003e\n  \u003cpath d=\"M14.5 5.5V10.5\" stroke-linecap=\"round\"/\u003e\n  \u003cpath d=\"M14.5 12.5V13.5\" stroke-linecap=\"round\"/\u003e\n\u003c/svg\u003e\n; iconId=4; id=1765531853537; name=PL200}",
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M2.5 2.5C2.47884 1.99197 2.65985 1.49625 3.00341 1.1214C3.34696 0.746547 3.82505 0.523105 4.333 0.5C7.045 0.5 8 4.5 8 4.5H4.333C3.82496 4.47716 3.34671 4.25379 3.0031 3.87888C2.65949 3.50397 2.47857 3.0081 2.5 2.5V2.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M13.5 2.5C13.5212 1.99197 13.3401 1.49625 12.9966 1.1214C12.653 0.746547 12.1749 0.523105 11.667 0.5C8.955 0.5 8 4.5 8 4.5H11.667C12.175 4.47716 12.6533 4.25379 12.9969 3.87888C13.3405 3.50397 13.5214 3.0081 13.5 2.5V2.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M13.5 9.5V14C13.5 14.3978 13.342 14.7794 13.0607 15.0607C12.7794 15.342 12.3978 15.5 12 15.5H4C3.60218 15.5 3.22064 15.342 2.93934 15.0607C2.65804 14.7794 2.5 14.3978 2.5 14V9.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M15.5 4.5H0.5V7.5H15.5V4.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n\u003c/svg\u003e\n; id=1765527327563; name=Arbeit}",
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M3.5 4.5V14.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M12.5 4.5V14.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M5.5 4.5V1.5H10.5V4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M14 4.5H2C1.17157 4.5 0.5 5.17157 0.5 6V13C0.5 13.8284 1.17157 14.5 2 14.5H14C14.8284 14.5 15.5 13.8284 15.5 13V6C15.5 5.17157 14.8284 4.5 14 4.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n\u003c/svg\u003e\n; id=1765527868286; name=Projekt}",
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M4.5 6.5V8.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M3.5 7.5H5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M15.475 12.28L14.5 6.00002C14.5006 5.38004 14.2709 4.78195 13.8553 4.32185C13.4398 3.86175 12.8681 3.57247 12.2513 3.51016C11.6344 3.44785 11.0164 3.61697 10.5173 3.98467C10.0181 4.35238 9.67339 4.89244 9.55002 5.50002H6.45002C6.32664 4.89244 5.98192 4.35238 5.48275 3.98467C4.98359 3.61697 4.3656 3.44785 3.74877 3.51016C3.13193 3.57247 2.56025 3.86175 2.1447 4.32185C1.72916 4.78195 1.49939 5.38004 1.50002 6.00002L0.525016 12.28C0.482593 12.4695 0.496246 12.6672 0.56431 12.8491C0.632373 13.0309 0.751903 13.189 0.908308 13.304C1.06471 13.4191 1.25123 13.4861 1.44509 13.497C1.63895 13.5078 1.83177 13.4619 2.00002 13.365L6.50002 10.5H9.50002L14 13.365C14.1683 13.4619 14.3611 13.5078 14.5549 13.497C14.7488 13.4861 14.9353 13.4191 15.0917 13.304C15.2481 13.189 15.3677 13.0309 15.4357 12.8491C15.5038 12.6672 15.5174 12.4695 15.475 12.28Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cline x1=\"11.5\" y1=\"6\" x2=\"11.5\" y2=\"7\"/\u003e\n  \u003cline x1=\"10.5\" y1=\"8\" x2=\"10.5\" y2=\"9\"/\u003e\n  \u003cline x1=\"12.5\" y1=\"8\" x2=\"12.5\" y2=\"9\"/\u003e\n\u003c/svg\u003e\n; id=1765528209566; name=Games}",
+                                    "@{emoji=ðŸ‘€; icon=\u003csvg width=\"16\" height=\"16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"m5.762 1.844-1.137.58C2.875 3.32 2 3.767 2 4.5s.875 1.181 2.625 2.075l1.137.58C6.863 7.719 7.415 8 8 8s1.137-.282 2.238-.844l1.137-.58C13.125 5.68 14 5.233 14 4.5s-.875-1.181-2.625-2.075l-1.137-.58C9.137 1.281 8.585 1 8 1s-1.137.282-2.238.844Z\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M13.859 8a.696.696 0 0 1 .141.417c0 .647-.875 1.04-2.625 1.828l-1.137.511c-1.101.496-1.653.744-2.238.744s-1.137-.248-2.238-.744l-1.137-.51C2.875 9.457 2 9.063 2 8.415c0-.148.047-.286.141-.416m11.443 3.5c.277.201.416.403.416.641 0 .6-.875.966-2.625 1.695l-1.137.474C9.137 14.77 8.585 15 8 15s-1.137-.23-2.238-.69l-1.137-.474C2.875 13.106 2 12.741 2 12.141c0-.238.139-.439.416-.641\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n\u003c/svg\u003e\n; id=1764983770803; name=KI}",
+                                    "@{emoji=âœˆï¸; icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M12.5 1.5H13.5C13.7652 1.5 14.0196 1.60536 14.2071 1.79289C14.3946 1.98043 14.5 2.23478 14.5 2.5V14.5C14.5 14.7652 14.3946 15.0196 14.2071 15.2071C14.0196 15.3946 13.7652 15.5 13.5 15.5H2.5C2.23478 15.5 1.98043 15.3946 1.79289 15.2071C1.60536 15.0196 1.5 14.7652 1.5 14.5V2.5C1.5 2.23478 1.60536 1.98043 1.79289 1.79289C1.98043 1.60536 2.23478 1.5 2.5 1.5H3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M10.5 0.5H5.5V2.5H10.5V0.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M5 9L7 11L11 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n\u003c/svg\u003e\n; id=1764970661025; name=Optimisierung }",
+                                    "@{icon=\u003csvg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n  \u003cpath d=\"M4.5 3.5H11.5C12.2956 3.5 13.0587 3.81607 13.6213 4.37868C14.1839 4.94129 14.5 5.70435 14.5 6.5V15.5H1.5V6.5C1.5 5.70435 1.81607 4.94129 2.37868 4.37868C2.94129 3.81607 3.70435 3.5 4.5 3.5V3.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M5.5 5.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5V0.5C8.3283 0.5 8.65339 0.564664 8.95671 0.690301C9.26002 0.815938 9.53562 1.00009 9.76777 1.23223C9.99991 1.46438 10.1841 1.73998 10.3097 2.04329C10.4353 2.34661 10.5 2.6717 10.5 3V5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n  \u003cpath d=\"M6.5 8.5H9.5C10.0304 8.5 10.5391 8.71071 10.9142 9.08579C11.2893 9.46086 11.5 9.96957 11.5 10.5V12.5H4.5V10.5C4.5 9.96957 4.71071 9.46086 5.08579 9.08579C5.46086 8.71071 5.96957 8.5 6.5 8.5V8.5Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\n\u003c/svg\u003e\n; id=1766700887314; name=Abiotic}"
+                                ]
+                   }
+}

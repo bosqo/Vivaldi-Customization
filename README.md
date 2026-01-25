@@ -67,8 +67,22 @@ This repository includes custom themes located in the `themes` folder (e.g., `ma
 1.  **Import to Vivaldi**:
     *   Open Vivaldi Settings → **Themes**.
     *   Click on the **Open Theme** button (folder icon) or drag and drop the `.zip` file directly into the Vivaldi window.
-    *   The theme (including any custom icons) will be installed and applied automatically.
-2.  **Icons**: If the theme includes custom icons (like `icons_theme.zip`), they will be part of the installed theme configuration.
+    *   Both Themes have to be included. The Theme `icons_theme.zip` is required for the Theme to work and need to be selected as icon set for the `mario_custom_theme.zip` to work. Sometimes it gets autoselected but make sure it is selected.
+2. Other Themes don't need icon sets to work.
+
+### 5. Side panel extensions
+Installed extensions in the sidepanel:
+1. Raindrop (https://raindrop.io/) - Bookmarks
+2. Gemini (https://gemini.com/) - AI Chat
+3. Microsoft ToDo (https://todo.microsoft.com/) - To Do List
+4. Notion (https://www.notion.so/) - Notes
+5. OneNote (https://www.onenote.com/) - Notes
+6. Claude (https://claude.ai/) - AI Chat
+7. DeepL (https://www.deepl.com/) - Translation
+8. QuillBot (https://www.quillbot.com/) - Text Improver
+
+### 6. Shortcuts
+For a list of custom shortcuts configured in this setup, please refer to the **[Shortcut Cheatsheet](CHEATSHEET.md)**.
 
 ## Credits & Resources
 

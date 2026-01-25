@@ -1,0 +1,5 @@
+﻿windows:Alt+Shift+G : toggle-tab-group
+windows:Ctrl+Period : execute_side_panel
+windows:Ctrl+Shift+1 : hotkey_1
+windows:Ctrl+Shift+2 : hotkey_3
+windows:Ctrl+Shift+3 : hotkey_2
