@@ -47,6 +47,8 @@
   class YBAddressBar {
       urlFieldMutationObserver = null;
       titleMutationObserver = null;
+      #currentClickHandler = null;
+      #currentDomainButton = null;
 
       constructor() {
           this.#addStyle();
@@ -54,6 +56,18 @@
           this.#placeYBTitle();
           this.urlFieldMutationObserver = this.#createUrlFieldMutationObserver();
           this.titleMutationObserver = this.#createTitleMutationObserver();
+      }
+
+      destroy() {
+          this.#cleanupDomainButton();
+          if (this.urlFieldMutationObserver) {
+              this.urlFieldMutationObserver.disconnect();
+              this.urlFieldMutationObserver = null;
+          }
+          if (this.titleMutationObserver) {
+              this.titleMutationObserver.disconnect();
+              this.titleMutationObserver = null;
+          }
       }
 
       // listeners
@@ -80,13 +94,23 @@
           return titleMutationObserver;
       }
 
-      #addDomainButtonListener(domainInfo) {
-          this.#ybDomainButton.addEventListener('click', (event) => {
+      #cleanupDomainButton() {
+          if (this.#currentDomainButton && this.#currentClickHandler) {
+              this.#currentDomainButton.removeEventListener('click', this.#currentClickHandler, true);
+          }
+          this.#currentClickHandler = null;
+          this.#currentDomainButton = null;
+      }
+
+      #addDomainButtonListener(button, domainInfo) {
+          this.#currentClickHandler = (event) => {
               event.stopPropagation();
               const prefix = this.#calculateDomainPrefix(domainInfo.type);
               const url = prefix + domainInfo.domain;
-              this.#activeWebview.setAttribute('src', url);
-          }, true);
+              this.#activeWebview?.setAttribute('src', url);
+          };
+          button.addEventListener('click', this.#currentClickHandler, true);
+          this.#currentDomainButton = button;
       }
 
       // builders
@@ -98,7 +122,10 @@
       }
 
       #createYBDomainButton() {
-          const domainInfo = this.#parseUrlDomain(this.#urlFragmentLink ? this.#urlFragmentLink.innerText : this.#urlFragmentHighlight.innerText);
+          const urlFragment = this.#urlFragmentLink || this.#urlFragmentHighlight;
+          if (!urlFragment) return null;
+
+          const domainInfo = this.#parseUrlDomain(urlFragment.innerText);
           if (!domainInfo.domain) {
               return null;
           }
@@ -110,7 +137,7 @@
           ybDomainButton.appendChild(ybDomain);
           this.#urlBarAddressField.insertBefore(ybDomainButton, this.#urlBarUrlFieldWrapper);
           if (domainInfo.clickable) {
-              this.#addDomainButtonListener(domainInfo);
+              this.#addDomainButtonListener(ybDomainButton, domainInfo);
           }
           return ybDomainButton;
       }
@@ -142,9 +169,13 @@
 
       #placeYBDomainButton() {
           if (!this.#urlBarAddressField) return;
-          if (this.#ybDomainButton) {
-              this.#urlBarAddressField.removeChild(this.#ybDomainButton);
+
+          const existingButton = this.#ybDomainButton;
+          if (existingButton) {
+              this.#cleanupDomainButton();
+              existingButton.remove();
           }
+
           if (this.#urlFragmentLink || this.#urlFragmentHighlight) {
               this.#createYBDomainButton();
           }
@@ -249,6 +280,10 @@
 
   var interval = setInterval(() => {
       if (document.querySelector('#browser')) {
+          // Cleanup existing instance if present
+          if (window.ybAddressBar && typeof window.ybAddressBar.destroy === 'function') {
+              window.ybAddressBar.destroy();
+          }
           window.ybAddressBar = new YBAddressBar();
           clearInterval(interval);
       }

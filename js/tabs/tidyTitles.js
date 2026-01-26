@@ -16,17 +16,54 @@
     // MODEL: 'deepseek-chat',
     };
 
-  // 存储已处理过的标签页 ID（避免重复处理）
+  // Store processed tab IDs to avoid duplicate processing
     const processedTabs = new Set();
 
-  // ========== 工具函数 ==========
+    // Maximum size for processedTabs before cleanup
+    const MAX_PROCESSED_TABS = 100;
 
+    // URLs that cannot be accessed by extensions
+    const RESTRICTED_URL_PREFIXES = [
+        'chrome://',
+        'chrome-extension://',
+        'devtools://',
+        'edge://',
+        'about:',
+        'vivaldi://',
+        'data:',
+        'javascript:',
+        'file://'
+    ];
 
-    // 获取浏览器界面语言
+    /**
+     * Check if URL is restricted (cannot inject scripts)
+     */
+    const isRestrictedUrl = (url) => {
+        if (!url) return true;
+        return RESTRICTED_URL_PREFIXES.some(prefix => url.startsWith(prefix));
+    };
+
+    /**
+     * Cleanup old entries from processedTabs to prevent memory leak
+     */
+    const cleanupProcessedTabs = () => {
+        if (processedTabs.size > MAX_PROCESSED_TABS) {
+            // Convert to array, keep only the last half
+            const entries = Array.from(processedTabs);
+            const toRemove = entries.slice(0, entries.length / 2);
+            toRemove.forEach(id => processedTabs.delete(id));
+            console.log(`Cleaned up ${toRemove.length} old entries from processedTabs`);
+        }
+    };
+
+  // ========== UTILITY FUNCTIONS ==========
+
+    // Get browser UI language
     const getBrowserLanguage = () => {
         return chrome.i18n.getUILanguage() || navigator.language || 'zh-CN';
     };
-  // 将语言代码转换为自然语言名称
+
+    // Convert language code to natural language name
     const getLanguageName = (langCode) => {
         const langMap = {
             'zh': '中文',
@@ -49,22 +86,21 @@
             'hi': 'हिन्दी'
         };
 
-      // 尝试完整匹配
+      // Try exact match first
         if (langMap[langCode]) {
             return langMap[langCode];
         }
-        
-        // 尝试主语言代码匹配
+
+        // Try matching main language code
         const mainLang = langCode.split('-')[0];
         return langMap[mainLang] || 'English';
     };
 
     /**
-   * 调用 GLM API 生成优化后的标题
-   */
+     * Call GLM API to generate an optimized title
+     */
     async function generateOptimizedTitle(originalTitle, url, content) {
-    // const languageName = getBrowserLanguage();
-        // 获取浏览器界面语言
+    // Get browser UI language
     const browserLang = getBrowserLanguage();
     const languageName = getLanguageName(browserLang);
     
@@ -173,10 +209,10 @@
   * 输出 → Example | home
 `;
 
-    // 输出完整提示词到控制台供调试
-    // console.log('=== 发送给 AI 的完整提示词 ===');
+    // Debug: Output full prompt to console
+    // console.log('=== Full prompt sent to AI ===');
     // console.log(prompt);
-    // console.log('=== 提示词结束 ===');
+    // console.log('=== End of prompt ===');
 
     const requestBody = {
       model: CONFIG.MODEL,
@@ -210,50 +246,57 @@
       if (optimizedTitle) {
         return optimizedTitle;
       } else {
-        console.warn('AI 返回空标题，保持原标题');
+        console.warn('AI returned empty title, keeping original');
         return originalTitle;
       }
     } catch (error) {
-      console.error('GLM API 调用失败:', error);
-      return originalTitle; // 失败时返回原标题
+      console.error('GLM API call failed:', error);
+      return originalTitle; // Return original title on failure
     }
   }
 
   /**
-   * 获取页面正文内容摘要
+   * Get page body content summary
    */
-  async function getPageContent(tabId) {
-    return new Promise((resolve) => {
-      try {
-        chrome.scripting.executeScript(tabId, {
-          code: `
-            (function() {
-              const bodyText = document.body?.innerText || '';
-              return bodyText.substring(0, 400);
-            })();
-          `
-        }, (results) => {
-          if (chrome.runtime.lastError) {
-            console.warn('无法获取页面内容:', chrome.runtime.lastError);
-            resolve('');
-          } else {
-            resolve(results?.[0] || '');
-          }
-        });
-      } catch (error) {
-        console.error('获取页面内容时出错:', error);
-        resolve('');
+  async function getPageContent(tabId, url) {
+    // Skip content extraction for restricted URLs
+    if (isRestrictedUrl(url)) {
+      console.log(`Skipping content extraction for restricted URL: ${url}`);
+      return '';
+    }
+
+    try {
+      const results = await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        func: () => {
+          const bodyText = document.body?.innerText || '';
+          return bodyText.substring(0, 400);
+        }
+      });
+
+      if (chrome.runtime.lastError) {
+        console.warn('Unable to get page content:', chrome.runtime.lastError);
+        return '';
       }
-    });
+
+      // Results is an array of InjectionResult objects
+      return results?.[0]?.result || '';
+    } catch (error) {
+      // Don't log error for expected permission issues
+      if (!error.message?.includes('Cannot access')) {
+        console.warn('Error getting page content:', error.message);
+      }
+      return '';
+    }
   }
 
   /**
-   * 更新标签页的 fixedTitle
+   * Update tab's fixedTitle property
    */
   function updateTabTitle(tabId, newTitle) {
     chrome.tabs.get(tabId, (tab) => {
       if (chrome.runtime.lastError) {
-        console.error('获取标签页失败:', chrome.runtime.lastError);
+        console.error('Failed to get tab:', chrome.runtime.lastError);
         return;
       }
 
@@ -261,19 +304,19 @@
       try {
         vivExtData = tab.vivExtData ? JSON.parse(tab.vivExtData) : {};
       } catch (e) {
-        console.error('JSON 解析错误:', e);
+        console.error('JSON parse error:', e);
       }
 
-      // 设置 fixedTitle
+      // Set fixedTitle
       vivExtData.fixedTitle = newTitle;
 
       chrome.tabs.update(tabId, {
         vivExtData: JSON.stringify(vivExtData)
       }, () => {
         if (chrome.runtime.lastError) {
-          console.error('更新标签页失败:', chrome.runtime.lastError);
+          console.error('Failed to update tab:', chrome.runtime.lastError);
         } else {
-          console.log(`✓ 标签页 ${tabId} 标题已优化为: ${newTitle}`);
+          console.log(`✓ Tab ${tabId} title optimized to: ${newTitle}`);
           processedTabs.add(tabId);
         }
       });
@@ -281,115 +324,127 @@
   }
 
   /**
-   * 处理单个标签页
+   * Process a single tab
    */
   async function processSingleTab(tabElement) {
     const tabIdStr = tabElement.getAttribute('data-id');
     if (!tabIdStr) {
-      console.warn('标签页元素缺少 data-id 属性，跳过');
+      console.warn('Tab element missing data-id attribute, skipping');
       return;
     }
 
     const tabId = parseInt(tabIdStr.replace('tab-', ''));
-    
-    // 跳过已处理的标签页
+
+    // Skip already processed tabs
     if (processedTabs.has(tabId)) {
       return;
     }
 
-    console.log(`检测到新固定的标签页 ID: ${tabId}`);
+    // Periodic cleanup to prevent memory leak
+    cleanupProcessedTabs();
+
+    console.log(`Detected newly pinned tab ID: ${tabId}`);
 
     try {
-      // 获取标签页信息
+      // Get tab information
       chrome.tabs.get(tabId, async (tab) => {
         if (chrome.runtime.lastError) {
-          console.error('获取标签页失败:', chrome.runtime.lastError);
+          console.error('Failed to get tab:', chrome.runtime.lastError);
           return;
         }
 
-        // 检查是否已设置 fixedTitle
-        let vivExtData = {};
-        try {
-          vivExtData = tab.vivExtData ? JSON.parse(tab.vivExtData) : {};
-        } catch (e) {
-          console.error('JSON 解析错误:', e);
-        }
+        const tabUrl = tab.url || '';
 
-        // 如果已有 fixedTitle，跳过
-        if (vivExtData.fixedTitle) {
-          console.log(`标签页 ${tabId} 已有自定义标题，跳过`);
+        // Skip restricted URLs that can't be processed
+        if (isRestrictedUrl(tabUrl)) {
+          console.log(`Tab ${tabId} has restricted URL, skipping AI processing`);
           processedTabs.add(tabId);
           return;
         }
 
-        // 获取页面内容
-        const content = await getPageContent(tabId);
-        
-        // 调用 AI 生成优化标题
-        console.log(`正在为标签页 ${tabId} 生成优化标题...`);
+        // Check if fixedTitle is already set
+        let vivExtData = {};
+        try {
+          vivExtData = tab.vivExtData ? JSON.parse(tab.vivExtData) : {};
+        } catch (e) {
+          console.error('JSON parse error:', e);
+        }
+
+        // Skip if fixedTitle already exists
+        if (vivExtData.fixedTitle) {
+          console.log(`Tab ${tabId} already has custom title, skipping`);
+          processedTabs.add(tabId);
+          return;
+        }
+
+        // Get page content (pass URL for validation)
+        const content = await getPageContent(tabId, tabUrl);
+
+        // Call AI to generate optimized title
+        console.log(`Generating optimized title for tab ${tabId}...`);
         const optimizedTitle = await generateOptimizedTitle(
           tab.title || '',
-          tab.url || '',
+          tabUrl,
           content
         );
 
-        // 更新标签页标题
+        // Update tab title
         updateTabTitle(tabId, optimizedTitle);
       });
     } catch (error) {
-      console.error(`处理标签页 ${tabId} 时出错:`, error);
+      console.error(`Error processing tab ${tabId}:`, error);
     }
   }
 
   /**
-   * 检查并处理固定的标签页（仅用于初始化）
+   * Check and process pinned tabs (initialization only)
    */
   async function checkPinnedTabs() {
-    // 排除标签栈：只选择固定标签页，但不包含 .is-substack 类
+    // Exclude tab stacks: only select pinned tabs without .is-substack class
     const pinnedTabElements = document.querySelectorAll('.tab-position.is-pinned:not(.is-substack) .tab-wrapper');
-    
-    console.log(`初始化：检测到 ${pinnedTabElements.length} 个固定标签页`);
-    
+
+    console.log(`Init: Detected ${pinnedTabElements.length} pinned tabs`);
+
     for (const tabElement of pinnedTabElements) {
       await processSingleTab(tabElement);
     }
   }
 
   /**
-   * 监听标签页被固定事件
+   * Listen for tab pinning events
    */
   function observePinnedTabs() {
     const tabStrip = document.querySelector('.tab-strip');
     if (!tabStrip) {
-      console.warn('未找到 .tab-strip 元素，稍后重试');
+      console.warn('.tab-strip element not found, retrying later');
       setTimeout(observePinnedTabs, 1000);
       return;
     }
 
-    // 使用 MutationObserver 监听 class 属性变化
+    // Use MutationObserver to watch for class attribute changes
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
-        // 只处理 class 属性变化
+        // Only process class attribute changes
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           const target = mutation.target;
-          
-          // 检查是否是 .tab-position 元素
+
+          // Check if it's a .tab-position element
           if (!target.classList?.contains('tab-position')) {
             continue;
           }
-          
-          // 检查是否是标签栈（排除）
+
+          // Exclude tab stacks
           if (target.classList.contains('is-substack')) {
             continue;
           }
-          
-          // 检查是否刚刚获得 is-pinned 类
+
+          // Check if tab just received is-pinned class
           const isPinnedNow = target.classList.contains('is-pinned');
           const wasPinnedBefore = mutation.oldValue?.includes('is-pinned') || false;
-          
-          // 只在从未固定变为固定时触发
+
+          // Only trigger when changing from unpinned to pinned
           if (isPinnedNow && !wasPinnedBefore) {
-            console.log('🔖 检测到标签页被固定');
+            console.log('Tab pinned detected');
             const tabWrapper = target.querySelector('.tab-wrapper');
             if (tabWrapper) {
               processSingleTab(tabWrapper);
@@ -399,21 +454,21 @@
       }
     });
 
-    // 监听配置：只监听属性变化，并记录旧值
+    // Observer config: watch attribute changes and record old values
     observer.observe(tabStrip, {
       subtree: true,
       attributes: true,
       attributeFilter: ['class'],
-      attributeOldValue: true  // 关键：记录旧的 class 值
+      attributeOldValue: true  // Important: record old class value
     });
 
-    console.log('✓ AI 标签页标题优化模组已启动');
-    
-    // 初始检查已固定的标签页
+    console.log('AI Tab Title Optimizer module started');
+
+    // Initial check for already pinned tabs
     checkPinnedTabs();
   }
 
-  // ========== 启动模组 ==========
+  // ========== MODULE STARTUP ==========
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', observePinnedTabs);
   } else {
@@ -421,52 +476,3 @@
   }
 
 })();
-
-// ✓ AI 标签页标题优化模组已启动
-// TidyTitles.js:358 初始化：检测到 5 个固定标签页
-// TidyTitles.js:307 检测到新固定的标签页 ID: 1175647132
-// TidyTitles.js:307 检测到新固定的标签页 ID: 1175647133
-// TidyTitles.js:307 检测到新固定的标签页 ID: 1175647170
-// TidyTitles.js:307 检测到新固定的标签页 ID: 1175647171
-// TidyTitles.js:307 检测到新固定的标签页 ID: 1175647283
-// TidyTitles.js:251 获取页面内容时出错: TypeError: Error in invocation of scripting.executeScript(scripting.ScriptInjection injection, optional function callback): No matching signature.
-//     at TidyTitles.js:235:26
-//     at new Promise (<anonymous>)
-//     at getPageContent (TidyTitles.js:233:12)
-//     at TidyTitles.js:333:31
-// （匿名） @ TidyTitles.js:251
-// TidyTitles.js:336 正在为标签页 1175647132 生成优化标题...
-// TidyTitles.js:251 获取页面内容时出错: TypeError: Error in invocation of scripting.executeScript(scripting.ScriptInjection injection, optional function callback): No matching signature.
-//     at TidyTitles.js:235:26
-//     at new Promise (<anonymous>)
-//     at getPageContent (TidyTitles.js:233:12)
-//     at TidyTitles.js:333:31
-// （匿名） @ TidyTitles.js:251
-// TidyTitles.js:336 正在为标签页 1175647133 生成优化标题...
-// TidyTitles.js:251 获取页面内容时出错: TypeError: Error in invocation of scripting.executeScript(scripting.ScriptInjection injection, optional function callback): No matching signature.
-//     at TidyTitles.js:235:26
-//     at new Promise (<anonymous>)
-//     at getPageContent (TidyTitles.js:233:12)
-//     at TidyTitles.js:333:31
-// （匿名） @ TidyTitles.js:251
-// TidyTitles.js:336 正在为标签页 1175647170 生成优化标题...
-// TidyTitles.js:251 获取页面内容时出错: TypeError: Error in invocation of scripting.executeScript(scripting.ScriptInjection injection, optional function callback): No matching signature.
-//     at TidyTitles.js:235:26
-//     at new Promise (<anonymous>)
-//     at getPageContent (TidyTitles.js:233:12)
-//     at TidyTitles.js:333:31
-// （匿名） @ TidyTitles.js:251
-// TidyTitles.js:336 正在为标签页 1175647171 生成优化标题...
-// TidyTitles.js:251 获取页面内容时出错: TypeError: Error in invocation of scripting.executeScript(scripting.ScriptInjection injection, optional function callback): No matching signature.
-//     at TidyTitles.js:235:26
-//     at new Promise (<anonymous>)
-//     at getPageContent (TidyTitles.js:233:12)
-//     at TidyTitles.js:333:31
-// （匿名） @ TidyTitles.js:251
-// TidyTitles.js:336 正在为标签页 1175647283 生成优化标题...
-// 5TidyTitles.js:76 Uncaught (in promise) ReferenceError: getBrowserLanguage is not defined
-//     at generateOptimizedTitle (TidyTitles.js:76:26)
-//     at TidyTitles.js:337:38
-// monochrome-icons.js:26 hue-change: -109.60°
-// window.html:1 This console bypasses security protections and can let attackers steal your passwords and personal information. Do NOT enter or paste code that you do not understand.
-// 4window.html:1 Uncaught (in promise) Error: Cannot access contents of url "devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@37329e0d7477a24a033f308f112b01e646708940/&targetType=tab&panel=elements". Extension manifest must request permission to access this host.

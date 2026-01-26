@@ -295,11 +295,11 @@ var PIP = {
         if (closestFigcaption) title = closestFigcaption.textContent.trim();
       }
 
-      // Add '画中画' suffix if title doesn't already contain it
-      if (title && !title.includes('画中画')) {
-        title = title + ' - 画中画';
+      // Add 'PiP' suffix if title doesn't already contain it
+      if (title && !title.includes('PiP')) {
+        title = title + ' - PiP';
       } else if (!title) {
-        title = '视频播放 - 画中画';
+        title = 'Video - PiP';
       }
 
       navigator.mediaSession.metadata = new MediaMetadata({

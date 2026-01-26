@@ -4,24 +4,19 @@
   "use strict";
 
   const config = {
-    // WebView にマウスポインターが入るか、WebView にフォーカスが移ると自動的にパネルを閉じる (true: 有効, false: 無効)
-    // Automatically close the panel when the mouse pointer enters the WebView or when the focus moves to the WebView (true: enabled, false: disabled)
+    // Automatically close panel when mouse enters WebView or focus moves to WebView
     auto_close: true,
 
-    // 固定表示モードで自動的にパネルを閉じる (true: 有効, false: 無効)
-    // Automatically close the panel in fixed display mode (true: enabled, false: disabled)
+    // Automatically close panel in fixed display mode
     close_fixed: false,
 
-    // パネルを開くまでの遅延時間 (ミリ秒)
-    // Delay time before opening the panel (milliseconds)
+    // Delay before opening panel (milliseconds)
     open_delay: 280,
 
-    // パネルを切り替えるまでの遅延時間 (ミリ秒)
-    // Delay time before switching the panel (milliseconds)
+    // Delay before switching panel (milliseconds)
     switch_delay: 40,
 
-    // パネルを閉じるまでの遅延時間 (ミリ秒)
-    // Delay time before closing the panel (milliseconds)
+    // Delay before closing panel (milliseconds)
     close_delay: 280,
   };
 
@@ -35,6 +30,15 @@
     addStyleSheet(`
             #main:has(#panels-container:hover) #webview-container {
                 pointer-events: none !important;
+            }
+
+            #panels-container {
+                transition: opacity 0.3s ease-out, margin-right 0.3s ease-out;
+            }
+
+            #panels-container.closing {
+                opacity: 0 !important;
+                margin-right: -400px !important;
             }
         `);
   };
